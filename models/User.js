@@ -12,7 +12,6 @@ const userSchema = new mongoose.Schema(
       index: true,
     },
     password: { type: String, required: true },
-    // Token version to invalidate all refresh tokens when incremented
     refreshTokenVersion: { type: Number, default: 0 },
   },
   { timestamps: true }

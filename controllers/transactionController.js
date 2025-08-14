@@ -1,6 +1,5 @@
 import Transaction from "../models/Transaction.js";
 
-// Add new transaction
 export const addTransaction = async (req, res) => {
   try {
     const { title, amount, type, date, category, notes } = req.body;
@@ -19,7 +18,6 @@ export const addTransaction = async (req, res) => {
   }
 };
 
-// Get transactions with filters, search, pagination
 export const getTransactions = async (req, res) => {
   try {
     const { type, category, startDate, endDate, search, page = 1 } = req.query;
@@ -53,7 +51,6 @@ export const getTransactions = async (req, res) => {
   }
 };
 
-// Get a single transaction
 export const getTransactionById = async (req, res) => {
   try {
     const transaction = await Transaction.findOne({
@@ -71,7 +68,6 @@ export const getTransactionById = async (req, res) => {
   }
 };
 
-// Update transaction
 export const updateTransaction = async (req, res) => {
   try {
     const transaction = await Transaction.findOne({
@@ -89,7 +85,6 @@ export const updateTransaction = async (req, res) => {
   }
 };
 
-// Delete transaction
 export const deleteTransaction = async (req, res) => {
   try {
     const transaction = await Transaction.findOneAndDelete({
@@ -104,7 +99,6 @@ export const deleteTransaction = async (req, res) => {
   }
 };
 
-// Summary dashboard
 export const getSummary = async (req, res) => {
   try {
     const transactions = await Transaction.find({ user: req.user._id });

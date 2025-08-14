@@ -14,7 +14,7 @@ router.route("/").get(protect, getTransactions).post(protect, addTransaction);
 
 router
   .route("/:id")
-  .get(protect, getTransactionById) // ← detail view
+  .get(protect, getTransactionById)
   .put(protect, updateTransaction)
   .delete(protect, deleteTransaction);
 
