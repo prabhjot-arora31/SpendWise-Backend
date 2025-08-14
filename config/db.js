@@ -11,7 +11,7 @@ async function connectDB() {
 
   if (!cached.promise) {
     const uri = process.env.MONGODB_URI;
-    if (!uri) throw new Error("MONGODB_URI is not set");
+    if (!uri) throw new Error("MONGODB_URI is not set.");
 
     cached.promise = mongoose
       .connect(uri, {
